@@ -9,7 +9,17 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/server.ts"
+            "dest": "/server.ts",
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type, Authorization"
+            }
         }
-    ]
+    ],
+    "functions": {
+        "server.ts": {
+            "maxDuration": 30
+        }
+    }
 }
